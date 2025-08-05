@@ -107,5 +107,5 @@ This project prepares you for more advanced topics by enforcing strict coding st
 ---
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Made%20with-C++-blue.svg"/>
+  <img src="https://img.shields.io/badge/Made%20with-C-blue.svg"/>
 </p>
