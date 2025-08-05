@@ -78,7 +78,7 @@ You will implement functions for:
 - Linked lists (creating, adding, deleting nodes)
 - Output functions (e.g., ft_putchar_fd, ft_putstr_fd)
 
-This project prepares you for more advanced topics by enforcing strict coding standards, deepening your C expertise, and encouraging clean, reusable code.
+This project prepares me for more advanced topics by enforcing strict coding standards, deepening my C expertise, and encouraging clean, reusable code.
 
 
 ## 42 School Standards
