@@ -11,8 +11,8 @@
 
 ## About
 
-This repository contains my implementation of the **libft** project at 42 School.  
-Libft is a foundational project that involves recreating a set of standard C library functions as well as some additional utilities.  
+This repository contains my implementation of the **libft** project at 42 School.
+Libft is a foundational project that involves recreating a set of standard C library functions as well as some additional utilities.
 It aims to build a solid understanding of C programming, pointers, memory management, and string manipulation.
 
 
@@ -49,7 +49,7 @@ make re
 - **Header and Source Separation**: Organizing code for clarity and maintainability
 - **Error Handling**: Defensive programming and consistent return values
 - **Code Norm Compliance**: Adhering to 42’s coding standards and style guides
-  
+
 ### Core C Concepts
 - **Memory Management**: Manual allocation, deallocation, and avoiding leaks
 - **Bitwise Operations**: Understanding low-level data manipulation (where applicable)
@@ -98,6 +98,13 @@ This project prepares me for more advanced topics by enforcing strict coding sta
 - ✅ Comprehensive error handling
 
 
+## 📝 Related Articles
+
+Blog posts documenting the learning process and context behind this project:
+
+- 📝 [42 Piscine and Common Core: What I Learned](https://arthur-portfolio.com/en/blog/42-piscine-and-core-curriculum) — Reflections on 42 School's selection process and 2-year curriculum
+
+---
 ## Contact
 
 - **GitHub**: [@TuroTheReal](https://github.com/TuroTheReal)
