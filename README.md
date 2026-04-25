@@ -1,4 +1,4 @@
-# LIBFT
+# MY_LIBRARY
 
 ## Table of Contents
 - [About](#about)
@@ -7,32 +7,38 @@
 - [Skills Developed](#skills-developed)
 - [Modules Overview](#modules-overview)
 - [42 School Standards](#42-school-standards)
+- [Related Articles](#-related-articles)
+- [Contact](#contact)
 
 
 ## About
 
-This repository contains my implementation of the **libft** project at 42 School.
-Libft is a foundational project that involves recreating a set of standard C library functions as well as some additional utilities.
-It aims to build a solid understanding of C programming, pointers, memory management, and string manipulation.
+This repository contains my unified personal C library, bundling three foundational 42 School projects: **libft**, **get_next_line**, and **ft_printf**. It serves as the base toolbox reused across virtually every other 42 project.
+
+Together, these modules build a solid understanding of C programming, pointers, memory management, string manipulation, file descriptor I/O, and variadic functions.
 
 
 ## Compilation
 
-Each module follows the same compilation standards:
+A single Makefile builds the whole library:
 
 ```bash
-
-# Compile with Makefile
+# Compile the library (produces libft.a)
 make
 
 # Clean object files
 make clean
 
-# Clean everything
+# Clean everything (including libft.a)
 make fclean
 
-# Recompile
+# Recompile from scratch
 make re
+```
+
+Include in your projects with:
+```c
+#include "my_library.h"
 ```
 
 
@@ -48,18 +54,19 @@ make re
 - **Modular Code**: Creating reusable and self-contained functions
 - **Header and Source Separation**: Organizing code for clarity and maintainability
 - **Error Handling**: Defensive programming and consistent return values
-- **Code Norm Compliance**: Adhering to 42’s coding standards and style guides
+- **Code Norm Compliance**: Adhering to 42's coding standards and style guides
 
 ### Core C Concepts
 - **Memory Management**: Manual allocation, deallocation, and avoiding leaks
-- **Bitwise Operations**: Understanding low-level data manipulation (where applicable)
+- **Variadic Functions**: Implementing functions with a variable number of arguments (printf)
+- **Static Buffers**: Persisting state across calls (get_next_line)
 - **Static vs Dynamic Linking**: Basics of library creation and usage
 - **Function Reimplementation**: Deep understanding through re-coding standard libc functions
 
 
 ## Skills Developed
 
-- **C Language Proficiency:**: Solid grasp of C syntax and semantics
+- **C Language Proficiency**: Solid grasp of C syntax and semantics
 - **Low-level Programming**: Effective use of pointers, memory, and system calls
 - **Library Creation**: Building a foundational C library with useful utilities
 - **Problem Solving**: Tackling edge cases and implementing robust algorithms
@@ -69,16 +76,21 @@ make re
 
 ## Modules Overview
 
-The libft project consists of reimplementing a set of standard C library functions as well as utility functions frequently used in larger projects. It serves as a foundational step to deepen understanding of C programming, memory management, and modular code design.
+### `libft/` — Standard library reimplementation
+Reimplementations of common libc functions and utility helpers:
+- Character and string manipulation (`ft_strlen`, `ft_strchr`, `ft_strncmp`, `ft_split`, `ft_substr`, `ft_strjoin`, ...)
+- Memory management (`ft_memset`, `ft_memcpy`, `ft_calloc`, `ft_bzero`, ...)
+- Conversion and checks (`ft_atoi`, `ft_itoa`, `ft_isalpha`, `ft_isdigit`, ...)
+- Linked lists (`ft_lstnew`, `ft_lstadd_back`, `ft_lstmap`, `ft_lstclear`, ...)
+- Output to file descriptors (`ft_putchar_fd`, `ft_putstr_fd`, `ft_putnbr_fd`, ...)
 
-You will implement functions for:
-- Character and string manipulation (e.g., ft_strlen, ft_strchr, ft_strncmp)
-- Memory management (e.g., ft_memset, ft_memcpy, ft_calloc)
-- Conversion and checks (e.g., ft_atoi, ft_isalpha, ft_isdigit)
-- Linked lists (creating, adding, deleting nodes)
-- Output functions (e.g., ft_putchar_fd, ft_putstr_fd)
+### `get_next_line/` — Read a file line by line
+Reads from a file descriptor one line at a time, regardless of the buffer size, using a static variable to persist leftover data between calls. Supports multiple file descriptors simultaneously.
 
-This project prepares me for more advanced topics by enforcing strict coding standards, deepening my C expertise, and encouraging clean, reusable code.
+### `printf/` — Custom printf implementation
+A reimplementation of `printf` covering the most common format specifiers (`%c`, `%s`, `%p`, `%d`, `%i`, `%u`, `%x`, `%X`, `%%`), built on top of variadic functions (`va_list`, `va_start`, `va_arg`, `va_end`).
+
+This unified library is reused across every other 42 project that requires foundational C utilities.
 
 
 ## 42 School Standards
@@ -91,11 +103,10 @@ This project prepares me for more advanced topics by enforcing strict coding sta
 - ✅ Compilation without warnings
 
 ### Coding Standards
-- ✅ Orthodox Canonical Form implementation
-- ✅ Proper const-correctness
 - ✅ No memory leaks (checked with valgrind)
-- ✅ Exception safety guarantees
-- ✅ Comprehensive error handling
+- ✅ Robust handling of edge cases (NULL, empty input, large inputs)
+- ✅ Consistent return values matching the libc reference
+- ✅ Reusable, self-contained modular functions
 
 
 ## 📝 Related Articles
